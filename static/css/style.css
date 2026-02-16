@@ -1,0 +1,276 @@
+/* --- PROFESSIONAL CLEAN BOOKSTORE CSS (COMMERCIAL GRADE) --- */
+:root {
+	--primary: #ff523b;
+	--dark: #212529;
+	--light: #ffffff;
+	--bg: #f4f7f6;
+	--border: #e1e4e8;
+	--text-muted: #6a737d;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* REMOVE UGLY DEFAULT FOCUS OUTLINES */
+input:focus,
+button:focus,
+select:focus,
+textarea:focus,
+.form-control:focus,
+.btn:focus {
+	outline: none !important;
+	box-shadow: none !important;
+	border-color: var(--primary) !important;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	background-color: var(--bg);
+	color: var(--dark);
+	line-height: 1.5;
+}
+
+/* CLEAN STICKY HEADER */
+.header {
+	background: #fff;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	border-bottom: 1px solid var(--border);
+	padding: 10px 0;
+}
+
+.navbar-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo-container img {
+	height: 45px;
+	width: auto;
+}
+
+/* NAVIGATION */
+nav#navItems ul {
+	display: flex;
+	list-style: none;
+	gap: 15px;
+}
+
+nav#navItems ul li a {
+	text-decoration: none;
+	color: var(--dark);
+	font-weight: 500;
+	font-size: 14px;
+	padding: 8px 12px;
+}
+
+nav#navItems ul li a:hover,
+nav#navItems ul li a.active {
+	color: var(--primary);
+}
+
+/* COMPACT SEARCH */
+.search-form {
+	display: flex;
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+.search-form input {
+	border: none;
+	padding: 6px 12px;
+	font-size: 14px;
+	width: 200px;
+	outline: none;
+}
+
+.search-form button {
+	background: #f6f8fa;
+	border: none;
+	border-left: 1px solid var(--border);
+	padding: 0 12px;
+	cursor: pointer;
+}
+
+/* FLAT CARDS (NO SILLY ANIMATIONS) */
+/* FLAT CARDS (NO SILLY ANIMATIONS) */
+.card {
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	background: #fff;
+	transition: none;
+}
+
+.card:hover {
+	transform: none;
+	border-color: var(--primary);
+}
+
+.card-img-top {
+	height: 200px;
+	object-fit: contain;
+	padding: 15px;
+	background: #fff;
+}
+
+.card-title {
+	font-size: 15px;
+	font-weight: 600;
+	margin-bottom: 4px;
+}
+
+/* UTILIZE SPACE (MAX 100%) */
+.container {
+	max-width: 1140px;
+	/* Bootstrap LG default, comfortable reading width */
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.main-content {
+	margin-top: 20px !important;
+}
+
+/* ALERTS */
+.alert-custom {
+	padding: 12px 20px;
+	border-radius: 6px;
+	margin-bottom: 20px;
+	font-size: 14px;
+	border: 1px solid transparent;
+}
+
+.alert-success {
+	background: #dafbe1;
+	color: #1e4620;
+	border-color: #bee5eb;
+}
+
+.alert-danger {
+	background: #ffeef0;
+	color: #a94442;
+	border-color: #ebccd1;
+}
+
+/* FOOTER */
+.portal-footer {
+	background: #fff;
+	border-top: 1px solid var(--border);
+	padding: 30px 0;
+	margin-top: 50px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+/* 100% RESPONSIVENESS */
+.mobile-toggle {
+	display: none;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+	nav#navItems,
+	.search-sector {
+		display: none;
+	}
+
+	/* Center footer specifically on mobile */
+	footer .container,
+	.portal-footer .container {
+		text-align: center !important;
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: center !important;
+	}
+
+	footer .text-muted,
+	.portal-footer .text-muted {
+		margin-bottom: 10px;
+		width: 100%;
+		display: block;
+		text-align: center !important;
+	}
+
+	footer .d-flex {
+		display: block !important;
+		/* Override Bootstrap flex on mobile for footer contents if needed */
+		text-align: center !important;
+	}
+
+	.mobile-toggle {
+		display: block;
+	}
+
+	.hero-text h1 {
+		font-size: 28px !important;
+	}
+
+	.col-md-3 {
+		width: 50% !important;
+		float: left;
+	}
+}
+
+@media (max-width: 480px) {
+
+	.col-md-3 {
+		width: 100% !important;
+	}
+}
+
+/* MARQUEE ANIMATION FOR LONG TITLES (ALWAYS RUNNING) */
+/* MARQUEE ANIMATION FOR LONG TITLES (MOBILE ONLY) */
+@media (max-width: 768px) {
+	.marquee-cell {
+		max-width: 15rem;
+		white-space: nowrap;
+		overflow: hidden;
+		position: relative;
+		mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+	}
+
+	.marquee-content {
+		display: inline-block;
+		animation: scroll-text 12s linear infinite;
+	}
+
+	/* Pause on touch */
+	.marquee-cell:active .marquee-content {
+		animation-play-state: paused;
+	}
+}
+
+@media (min-width: 769px) {
+	.marquee-cell {
+		/* Reset for desktop */
+		max-width: 100%;
+		white-space: normal;
+		overflow: visible;
+		display: block;
+	}
+
+	.marquee-content {
+		animation: none;
+		display: inline;
+	}
+}
+
+@keyframes scroll-text {
+	0% {
+		transform: translateX(100%);
+	}
+
+	100% {
+		transform: translateX(-100%);
+	}
+}

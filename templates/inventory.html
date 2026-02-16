@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block title %}Bookstore | Inventory Management{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold">Inventory Control Center</h2>
+    <a href="{{ url_for('add_book') }}" class="btn btn-success px-4">
+        Add New Stock
+    </a>
+</div>
+
+<!-- Low Stock Alerts -->
+<div class="row">
+    <!-- Main Inventory Table -->
+    <div class="col-lg-9 mb-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0" style="width: auto; min-width: 100%;">
+                        <thead class="table-dark">
+                            <tr>
+                                <th class="ps-3">Book Info</th>
+                                <th>ISBN</th>
+                                <th>Price(KES)</th>
+                                <th>Stock</th>
+                                <th>Category</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for book in books %}
+                            <tr>
+                                <td class="ps-3">
+                                    <div class="d-flex align-items-center">
+                                        <img src="{{ url_for('static', filename=book.image_url) }}" class="rounded me-3"
+                                            width="40" height="50" style="object-fit: contain;">
+                                        <div>
+                                            <div class="fw-bold">{{ book.title }}</div>
+                                            <small class="text-muted">{{ book.author }}</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><code class="text-dark">{{ book.isbn }}</code></td>
+                                <td>{{ "{:,.2f}".format(book.price) }}</td>
+                                <td>
+                                    {% if book.stock_quantity == 0 %}
+                                    <span class="badge bg-danger px-2">OUT</span>
+                                    {% elif book.stock_quantity < 5 %} <span class="badge bg-warning text-dark px-2">{{
+                                        book.stock_quantity }} LOW</span>
+                                        {% else %}
+                                        <span class="badge bg-success px-2">{{ book.stock_quantity }}</span>
+                                        {% endif %}
+                                </td>
+                                <td><span class="text-muted">{{ book.category }}</span></td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-1 justify-content-center">
+                                        <form action="{{ url_for('sell_book', book_id=book.id) }}" method="POST"
+                                            class="d-flex align-items-center">
+                                            <input type="number" name="quantity" value="1" min="1"
+                                                max="{{ book.stock_quantity }}"
+                                                class="form-control form-control-sm me-1" style="width: 50px;" {% if
+                                                book.stock_quantity==0 %}disabled{% endif %}>
+                                            <button type="submit" class="btn btn-primary btn-sm px-2" {% if
+                                                book.stock_quantity==0 %}disabled{% endif %}>
+                                                Sell
+                                            </button>
+                                        </form>
+                                        <a href="{{ url_for('edit_book', book_id=book.id) }}"
+                                            class="btn btn-sm btn-outline-secondary px-2" title="Edit">
+                                            <i class="fa fa-pencil"></i>
+                                        </a>
+                                        <form action="{{ url_for('delete_book', book_id=book.id) }}" method="POST"
+                                            onsubmit="return confirm('Delete {{ book.title }}?');">
+                                            <button type="submit" class="btn btn-sm btn-outline-danger px-2"
+                                                title="Delete">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Low Stock Sidebar -->
+    <div class="col-lg-3">
+        <div class="card shadow-sm border-0 mb-4 position-sticky" style="top: 100px;">
+            <div class="card-header bg-danger text-white fw-bold">
+                Low Stock Alert
+            </div>
+            <div class="card-body p-0">
+                {% if low_stock %}
+                <ul class="list-group list-group-flush">
+                    {% for book in low_stock %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="small fw-semibold text-truncate" style="max-width: 150px;"
+                            title="{{ book.title }}">{{ book.title }}</span>
+                        <span class="badge bg-warning text-dark">{{ book.stock_quantity }} left</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <div class="p-3 text-center text-muted small">
+                    All stock levels are healthy.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
