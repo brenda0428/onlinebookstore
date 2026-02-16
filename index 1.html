@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="header">
+    <div class="container">
+	
+    <div class="navbar">
+        <div class="logo">
+            <img src="pics/logo2.jpg" alt="Bookstore Logo" width="125">
+        </div>
+		<nav>
+		<ul id="menuItems">
+		    <li><a href="">Home</a></li>
+		    <li><a href="">Products</a></li>
+		    <li><a href="">About</a></li>
+		    <li><a href="">Contact</a></li>
+		    <li><a href="">Account</a></li>
+		</ul>		
+		</nav>
+<img src ="pics\cart..png"	width="30px" height="30px">
+<img src ="pics\menu.jpg" class="menu-icon" onclick="menutoggle()">
+    </div>
+	<div class="row">
+    <div class="col-2">
+	     <h1>Read Your World!</h1>
+		 <p> Discover your next favourite read, and let the pages take you somewhere wonderful.<br>Happy reading!</p>
+		 <a href=""class="btn">Explore Now &#8594</a>
+	</div>
+    <div class="col-2">
+	<img src="pics\shelf.png.webp">
+	</div>
+	
+	</div>
+</div>
+</div>
+<!------featured categories------>
+<div class="categories">
+    <div class="small-container">
+     <div class="row">
+	 <div class="col-3"></div>
+	     <img src="pics\phyc.jpg">
+	 <div class="col-3"></div>
+	     <img src="pics\hg.jpg">
+	 <div class="col-3"></div>
+	     <img src="pics\money.jpg">
+	    </div>
+	 </div>
+</div>
+<!------featured books------>
+    <div class="small-container">
+     <h2 class="title">Featured Books</h2>
+	 <div class="row">
+        <div class="col-4">
+		<img src="pics\ugly love.webp">
+		<h4>Ugly Love</h4>
+		<div class= "rating">
+		     <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+		  </div>
+		<p> kes.850.00</p>
+		</div>
+		<div class="col-4">
+		<img src="pics\money.jpg">
+		<h4>The psychology Of Money</h4>
+		<div class= "rating">
+		     <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			<i class="fa fa-star-o" aria-hidden="true"></i>
+		  </div>
+		<p> kes.1500</00p>
+		</div>
+		<div class="col-4">
+		<img src="pics\atomic habits.webp">
+		<h4>Atomic Habits</h4>
+		<div class= "rating">
+		     <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star-half-o" aria-hidden="true"></i>
+		  </div>
+		<p> kes.1000.00</p>
+		</div>
+		<div class="col-4">
+		<img src="pics\calculus.webp">
+		<h4>calculus </h4>
+		<div class= "rating">
+		     <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star-half-o" aria-hidden="true"></i>
+		  </div>
+		<p> kes.2500.00</p>
+		</div>
+		</div>
+<!-----latest books------>
+     <h3 class="title">Latest books</h3>
+		 <div class="row">
+        <div class="col-4">
+		<img src="pics\phyc.jpg">
+		<h4>Fundamentals of physics</h4>
+		<div class= "rating">
+		     <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+		  </div>
+		<p> kes.5850.00</p>
+		</div>
+		<div class="col-4">
+		<img src="pics\lucky puppy kids.jpg">
+		<h4>The Lucky Puppy</h4>
+		<div class= "rating">
+		     <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			<i class="fa fa-star-o" aria-hidden="true"></i>
+		  </div>
+		<p> kes.300</00p>
+		</div>
+		<div class="col-4">
+		<img src="pics\horror.jpg">
+		<h4>Nothing but blackened teeth</h4>
+		<div class= "rating">
+		     <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star-half-o" aria-hidden="true"></i>
+		  </div>
+		<p> kes.500.00</p>
+		</div>
+		<div class="col-4">
+		<img src="pics\harry potter 2.jpg.webp">
+		<h4>Harry Potter book 2 </h4>
+		<div class= "rating">
+		     <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star" aria-hidden="true"></i>
+			 <i class="fa fa-star-half-o" aria-hidden="true"></i>
+		  </div>
+		<p> kes.1600.00</p>
+		</div>
+	<!------ offer----->
+		<div class="offer">
+		    <div class="small-container">
+			     <div class="row">
+				 <div class="col-2">
+		<img src="pics\it ends with us.jpg" class="offer-img">>
+				 </div>
+				 <div class="col-2">
+				 <p> Exclusively available on Bookstore</p>
+				 <h1>It ends with us</h1>
+				 <small>There is no such thing as bad people. We’re all just people who sometimes do bad things.</small>
+				 <br>
+				  <a href="" class="btn">Buy Now &#8594;</a>
+				 </div>
+				 </div>
+		</div>
+		</div>
+	<!-----brands---->
+	<div class="brands">
+	     <div class="small-container">
+		     <div class="row">
+			    <div class="col-5">
+				  <img src="pics\lipa na mpesa.png">
+				</div>
+				<div class="col-5">
+				  <img src="pics\mastercard.png">
+				</div>
+				<div class="col-5">
+				  <img src="pics\glovo.png">
+				</div>
+			</div>	
+		</div>		
+	</div>			
+	<!-----footer---->
+	<div class="footer">
+	     <div class="container">
+		     <div class="row">
+			    
+				<div class="footer-col-1">
+				     <img src="pics/logo2.jpg">
+					 <p> Our purpose is to sustainably make reading accessible to many. </p>
+				</div>
+				<div class="footer-col-2">
+				     <h3> Useful Links</h3>
+					 <ul>
+					    <li>Customer support</li>
+					    <li>Blog Post</li>
+					    <li>Return Policy</li>
+					    <li>Shipping rates</li>
+					</ul>
+				</div>	
+					<div class="footer-col-3">
+				     <h3> Follow Us</h3>
+					 <ul>
+					    <li>Twitter</li>
+					    <li>Instagram</li>
+					    <li>TikTok</li>
+					    <li>Facebook</li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+	</div>	
+	<!----js for toggle menu---->
+	<script>
+	    var menuItems= document.getElementById("menuItems");
+		menuItems.style.maxHeight = "0px";
+		function menutoggle()(){
+		if(menuItems.style,maxHeight == "0px"){
+		     menuItems.style.maxHeight = "200px";
+		}
+		else
+		{menuItems.style.maxHeight = "0px";
+		}
+		}
+	</script>
+</body>
+
+</html>
