@@ -35,9 +35,7 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="marquee-cell" title="{{ sale.book.title }}">
-                                    <span class="marquee-content fw-bold">{{ sale.book.title }}</span>
-                                </div>
+                                <span class="fw-bold" title="{{ sale.book.title }}">{{ sale.book.title }}</span>
                             </td>
                             <td class="text-center">{{ sale.quantity }}</td>
                             <td class="text-end pe-3 text-success fw-bold">{{ "{:,.0f}".format(sale.total_price) }}</td>

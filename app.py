@@ -1,4 +1,4 @@
-# main app file - run with: python app.py
+# main app file
 
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
@@ -20,7 +20,7 @@ login_manager.login_view = 'login'
 login_manager.login_message = 'Please log in to access the system.'
 login_manager.login_message_category = 'warning'
 
-@login_manager.user_loader
+@login_manager.user_loader # loads the user object from the user ID stored in the session
 def load_user(user_id):
     return User.query.get(int(user_id))
 

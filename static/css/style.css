@@ -228,49 +228,10 @@ nav#navItems ul li a.active {
 	}
 }
 
-/* MARQUEE ANIMATION FOR LONG TITLES (ALWAYS RUNNING) */
-/* MARQUEE ANIMATION FOR LONG TITLES (MOBILE ONLY) */
-@media (max-width: 768px) {
-	.marquee-cell {
-		max-width: 15rem;
-		white-space: nowrap;
-		overflow: hidden;
-		position: relative;
-		mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-	}
-
-	.marquee-content {
-		display: inline-block;
-		animation: scroll-text 12s linear infinite;
-	}
-
-	/* Pause on touch */
-	.marquee-cell:active .marquee-content {
-		animation-play-state: paused;
-	}
-}
-
-@media (min-width: 769px) {
-	.marquee-cell {
-		/* Reset for desktop */
-		max-width: 100%;
-		white-space: normal;
-		overflow: visible;
-		display: block;
-	}
-
-	.marquee-content {
-		animation: none;
-		display: inline;
-	}
-}
-
-@keyframes scroll-text {
-	0% {
-		transform: translateX(100%);
-	}
-
-	100% {
-		transform: translateX(-100%);
-	}
+/* Standard text truncation for long titles */
+.truncate-title {
+	max-width: 250px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
