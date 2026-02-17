@@ -36,7 +36,7 @@ with app.app_context():
         db.session.commit()
     
     # sample books
-    if Book.query.count() == 0:
+    if Book.query.count() == 0: 
         books = [
             Book(title='Ugly Love', author='Colleen Hoover', isbn='978-1476770383', price=850.0, stock_quantity=15, category='Romance', image_url='pics/ugly love.webp'),
             Book(title='The Psychology of Money', author='Morgan Housel', isbn='978-0857197689', price=1500.0, stock_quantity=10, category='Finance', image_url='pics/money.jpg'),
