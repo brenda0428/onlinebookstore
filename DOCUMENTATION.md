@@ -64,26 +64,26 @@ erDiagram
 The following diagram illustrates the interactions between the System Administrator and the Bookstore Management System.
 
 ```mermaid
-useCaseDiagram
-    actor Administrator as "Admin/Staff"
+flowchart TD
+    Admin([Administrator / Staff])
     
-    package "Bookstore Management System" {
-        usecase "Login / Logout" as UC1
-        usecase "View Dashboard Stats" as UC2
-        usecase "Manage Inventory (Add/Edit/Delete)" as UC3
-        usecase "Search Books" as UC4
-        usecase "Record Book Sale" as UC5
-        usecase "View Transaction Logs" as UC6
-        usecase "Generate Sales Reports" as UC7
-    }
+    subgraph SystemBoundary [Bookstore Management System]
+        UC1(Login / Logout)
+        UC2(View Dashboard Stats)
+        UC3(Manage Inventory: Add/Edit/Delete)
+        UC4(Search Books)
+        UC5(Record Book Sale)
+        UC6(View Transaction Logs)
+        UC7(Generate Sales Reports)
+    end
 
-    Administrator --> UC1
-    Administrator --> UC2
-    Administrator --> UC3
-    Administrator --> UC4
-    Administrator --> UC5
-    Administrator --> UC6
-    Administrator --> UC7
+    Admin --> UC1
+    Admin --> UC2
+    Admin --> UC3
+    Admin --> UC4
+    Admin --> UC5
+    Admin --> UC6
+    Admin --> UC7
 ```
 
 ---
