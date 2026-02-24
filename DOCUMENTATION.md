@@ -64,10 +64,11 @@ erDiagram
 The following diagram illustrates the interactions between the System Administrator and the Bookstore Management System.
 
 ```mermaid
-flowchart TD
+flowchart LR
     Admin([Administrator / Staff])
     
     subgraph SystemBoundary [Bookstore Management System]
+        direction TB
         UC1(Login / Logout)
         UC2(View Dashboard Stats)
         UC3(Manage Inventory: Add/Edit/Delete)
@@ -77,13 +78,13 @@ flowchart TD
         UC7(Generate Sales Reports)
     end
 
-    Admin --> UC1
-    Admin --> UC2
-    Admin --> UC3
-    Admin --> UC4
-    Admin --> UC5
-    Admin --> UC6
-    Admin --> UC7
+    Admin --- UC1
+    Admin --- UC2
+    Admin --- UC3
+    Admin --- UC4
+    Admin --- UC5
+    Admin --- UC6
+    Admin --- UC7
 ```
 
 ---
